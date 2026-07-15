@@ -32,6 +32,7 @@ public final class Content {
             WhoBlock,
             SublblBlock,
             CardBlock,
+            Tip,
             RiskBlock,
             ProcessListBlock {
     }
@@ -64,7 +65,7 @@ public final class Content {
     public record Message(String plainText) implements CardElement {
     }
 
-    public record Tip(String html) implements CardElement {
+    public record Tip(String html) implements CardElement, Block {
     }
 
     public record RiskBlock(String tag, String html) implements Block {

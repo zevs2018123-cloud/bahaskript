@@ -115,6 +115,7 @@ public final class HtmlRenderer {
         out.append("<meta charset=\"UTF-8\">\n");
         out.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
         out.append("<title>").append(escape(title)).append("</title>\n");
+        out.append("<link rel=\"icon\" href=\"data:,\">\n");
         out.append("<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n");
         out.append("<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n");
         out.append("<link href=\"https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">\n");
@@ -146,6 +147,7 @@ public final class HtmlRenderer {
             case WhoBlock wb -> out.append("<p class=\"who\">").append(wb.html()).append("</p>\n");
             case SublblBlock sb -> out.append("<div class=\"sublbl\">").append(escape(sb.text())).append("</div>\n");
             case CardBlock cb -> appendCard(out, cb);
+            case Tip t -> out.append("<div class=\"tip\">").append(t.html()).append("</div>\n");
             case RiskBlock rb -> out.append("<div class=\"rl\"><b>").append(escape(rb.tag())).append("</b> ")
                     .append(rb.html()).append("</div>\n");
             case ProcessListBlock plb -> appendProcessList(out, plb);
