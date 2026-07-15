@@ -37,6 +37,17 @@ bahaskript --port 9000        сервер на выбранном порту
 bahaskript --out page.html    один раз отрендерить в файл и выйти
 ```
 
+## GitHub Pages
+
+Сайт (bahaskr.com) раздаётся GitHub Pages из корня этой ветки как статика:
+Pages не исполняет Java, поэтому в корне лежит сгенерированный `index.html`.
+После правок контента в `ScriptData.java` его нужно перегенерировать и
+закоммитить:
+
+```
+java -cp target/classes com.bahaskript.Application --out index.html
+```
+
 ## Структура
 
 ```
